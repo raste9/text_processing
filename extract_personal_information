@@ -1,0 +1,7 @@
+number = int(input())
+
+for _ in range(number):
+    text = input()
+    name = ''.join(char for char in text[text.index('@') + 1: text.index('|')] if char != '|')
+    age = ''.join(char for char in text[text.index('#') + 1: text.index('*')] if char != '*')
+    print(f"{name} is {age} years old.")
