@@ -1,0 +1,11 @@
+start_symbol = input()
+last_symbol = input()
+text = input()
+
+total_sum = 0
+
+for current_symbol in text:
+    if ord(start_symbol) < ord(current_symbol) < ord(last_symbol):
+        total_sum += ord(current_symbol)
+
+print(total_sum)
