@@ -1,0 +1,19 @@
+secret_key = [int(x) for x in input().split()]
+secret_message = input()
+
+while secret_message != "find":
+    decrypted_message = ""
+    key_length = len(secret_key)
+
+
+    for i, char in enumerate(secret_message):
+        shift = secret_key[i % key_length]
+        decrypted_char = chr(ord(char) - shift)
+        decrypted_message += decrypted_char
+
+    item = decrypted_message.split("&")[1]
+    location = decrypted_message.split("<")[-1][:-1]
+
+    print(f"Found {item} at {location}")
+
+    secret_message = input()
